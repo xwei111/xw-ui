@@ -1,0 +1,89 @@
+// button
+@mixin xw_button_border_bg($bgcolor, $bdcolor) {
+    background: $bgcolor;
+    border-color: $bdcolor;
+}
+@mixin xw_button_types($color, $color-plain) {
+    @include xw_button_border_bg($color, $color);
+    #{if(&, "&", "*")}.is-plain {
+        @include xw_button_border_bg($color-plain, $color);
+        color: $color;
+        &:focus,
+        &:hover {
+            @include xw_button_border_bg($color, $color);
+            opacity: 1;
+            color: #fff;
+        }
+        &:active {
+            opacity: 0.7;
+        }
+        &.is-disabled, &.is-loading {
+            &:hover {
+                @include xw_button_border_bg($color-plain, $color);
+                color: $color;
+            }
+        }
+    }
+    #{if(&, "&", "*")}.is-disabled, #{if(&, "&", "*")}.is-loading {
+        &:hover {
+            opacity: 0.4;
+        }
+    }
+}
+@mixin xw_button_group($name, $color) {
+    #{if(&, "&", "*")}.xw-button-#{$name}:first-child {
+        border-left-color: $color;
+    }
+    #{if(&, "&", "*")}.xw-button-#{$name}:last-child {
+        border-right-color: $color;
+    }
+}
+@mixin xw_button_size($defaulth, $defaultw, $mediumh, $mediumw, $largeh, $largew, $minih, $miniw) {
+    #{if(&, "&", "*")}.xw-button-size-default {
+        padding: $defaulth $defaultw;
+        font-size: 12px;
+    }
+    #{if(&, "&", "*")}.xw-button-size-medium {
+        padding: $mediumh $mediumw;
+    }
+    #{if(&, "&", "*")}.xw-button-size-large {
+        padding: $largeh $largew;
+        font-size: 14px;
+    }
+    #{if(&, "&", "*")}.xw-button-size-mini {
+        padding: $minih $miniw;
+        font-size: 12px;
+    }
+}
+@mixin xw_radio_size($defaulth, $defaultw, $mediumh, $mediumw, $largeh, $largew, $minih, $miniw) {
+    #{if(&, "&", "*")}.xw-radio-size-default {
+        padding: $defaulth $defaultw;
+        font-size: 12px;
+    }
+    #{if(&, "&", "*")}.xw-radio-size-medium {
+        padding: $mediumh $mediumw;
+    }
+    #{if(&, "&", "*")}.xw-radio-size-large {
+        padding: $largeh $largew;
+    }
+    #{if(&, "&", "*")}.xw-radio-size-mini {
+        padding: $minih $miniw;
+        font-size: 12px;
+    }
+}
+@mixin xw_input_hidden {
+    opacity: 0;
+    outline: none;
+    position: absolute;
+    z-index: -1;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    margin: 0;
+}
+@mixin ellipsis {
+    overflow:hidden;
+    text-overflow:ellipsis;
+    white-space:nowrap;
+}

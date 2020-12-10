@@ -1,0 +1,143 @@
+@import './common/var.scss';
+@import './common/mixin.scss';
+
+.xw-radio {
+    cursor: pointer;
+    display: inline-block;
+    white-space: nowrap;
+    margin-right: 15px;
+    box-sizing: border-box;
+    font-size: 14px;
+    &.xw-radio-disabled {
+        cursor: not-allowed;
+    }
+    &.xw-radio-border {
+        border: 1px solid $border-main-color;
+        padding: 0px 15px;
+        border-radius: $border-radius;
+        height: 32px;
+        line-height: 32px;
+        font-size: 12px;
+        &.xw-radio-active {
+            border-color: $primary-color;
+        }
+    }
+    .xw-radio_outside {
+        white-space: nowrap;
+        cursor: pointer;
+        outline: none;
+        display: inline-block;
+        line-height: 1;
+        position: relative;
+        vertical-align: middle;
+        margin-right: 5px;
+        &.is-radio-disabled {
+            cursor: not-allowed;
+        }
+        .xw-radio_inner {
+            position: relative;
+            display: inline-block;
+            width: 16px;
+            height: 16px;
+            border: 1px solid $border-main-color;
+            border-radius: 50%;
+            box-sizing: border-box;
+            background: #fff;
+            &.is-active-radio {
+                border-color: $primary-color;
+                .xw-radio_inner_circle {
+                    opacity: 1;
+                    transition: all .2s ease-in-out;
+                }
+            }
+            &.is-radio-disabled {
+                border-color: $border-main-color;
+                background: $input-dis-background ;
+                cursor: not-allowed;
+                &:hover {
+                    border-color: $border-main-color;
+                }
+                .xw-radio_inner_circle {
+                    background: $border-main-color;
+                }
+            }
+            &:hover {
+                border-color: $primary-color;
+            }
+            .xw-radio_inner_circle {
+                position: absolute;
+                top: 50%;
+                left: 50%;
+                transform: translate(-50%, -50%);
+                display: inline-block;
+                width: 10px;
+                height: 10px;
+                background: $primary-color;
+                border-radius: 50%;
+                opacity: 0;
+                transition: all .2s ease-in-out;
+            }
+        }
+        .xw-input-radio {
+            @include xw_input_hidden;
+        }
+    }
+    .is-active-radio_text {
+        color: $primary-color;
+    }
+    .is-radio-disabled_text {
+        cursor: not-allowed;
+        color: $dis-color;  
+    }
+}
+
+.xw-radio-group {
+    display: flex;
+    .xw-radio-button {
+        position: relative;
+        background: #fff;
+        cursor: pointer;
+        box-sizing: border-box;
+        border-top: 1px solid $border-main-color;
+        border-bottom: 1px solid $border-main-color;
+        border-left: 0.5px solid $border-main-color;
+        transition: all .2s ease-in-out;
+        font-size: 14px;
+        // @include xw_radio_size(13px, 21px, 11px, 21px, 10px, 16px, 8px, 16px);
+        @include xw_radio_size(8px, 16px, 9px, 21px, 11px, 21px, 6px, 16px);
+        &.xw-radio-button-active {
+            background: $primary-color;
+            color: #fff;
+            border-color: $primary-color;
+            transition: all .2s ease-in-out;
+        }
+        &.xw-radio-button-disabled {
+            cursor: not-allowed;
+            background: #fff;
+            opacity: 0.7;
+            color: rgba(0 ,0, 0, 0.5);
+            &.xw-radio-button-active {
+                border-color: $border-main-color;
+                background: $input-dis-background;
+            }
+        }
+        .xw-input-radio {
+            @include xw_input_hidden;
+        }
+    }
+    .xw-radio-button:last-child {
+        border-right: 1px solid $border-main-color;
+        border-radius: 0 $border-radius $border-radius 0;
+        &.xw-radio-button-active {
+            border-right-color: $primary-color;
+        }
+        &.xw-radio-button-disabled {
+            border-right-color: $border-main-color;
+        }
+    }
+    .xw-radio-button:first-child {
+        border-radius: $border-radius 0 0 $border-radius;
+        border-left-width: 1px;
+    }
+}
+

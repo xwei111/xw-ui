@@ -1,0 +1,140 @@
+@import './common/var.scss';
+@import './common/animate.scss';
+@import './common/mixin.scss';
+
+.xw-button {
+    position: relative;
+    display: inline-block;
+    box-sizing: border-box;
+    line-height: 1;
+    border: 1px solid $border-main-color;
+    border-radius: $border-radius;
+    text-align: center;
+    outline: none;
+    cursor: pointer;
+    font-size: 14px;
+    vertical-align: middle;
+    i {
+        position: relative;
+        top: 1px;
+        font-size: 12px;
+    }
+}
+.is-loading {
+    opacity: 0.4;
+    pointer-events: none;
+}
+.is-round {
+    border-radius: 20px;
+}
+.is-gradients, .is-not-type-default {
+    color: #fff;
+    &:focus,
+    &:hover{ opacity: 0.7; }
+    &:active{ opacity: 1; }
+    &.is-disabled {
+        &:hover {
+            opacity: 0.4;
+        }
+    }
+}
+.is-gradients {
+    border: none;
+    @include xw_button_size(10px, 16px, 11px, 21px, 13px, 21px, 8px, 16px);
+}
+.is-animate  {
+    animation: hue 10s infinite linear;
+}
+.is-disabled-type {
+    cursor: not-allowed;
+    opacity: 0.4;
+}
+.xw-button-default {
+    background: #fff;
+    color: $default-color;
+    &:focus,
+    &:hover {
+        @include xw_button_border_bg($primary-plain-color, $button-border-color);
+        color: $primary-color;
+    }
+    &:active {
+        border-color: $primary-color;
+    }
+    &.is-plain {
+        border-color: $button-border-color;
+        &:focus,
+        &:hover {
+            opacity: 1;
+            color: $primary-color;
+        }
+        &:active {
+            border-color: $primary-color;
+        }
+        &.is-disabled, &.is-loading {
+            border-color: $primary-color;
+            opacity: 0.4;
+            &:hover {
+                border-color: $primary-color;
+                opacity: 0.4;
+            }
+        }
+    }
+    &.is-disabled, &.is-loading {
+        &:hover {
+            background: #fff;
+            border-color: $border-main-color;
+            color: $default-color;
+        }
+    }
+}
+.xw-button-primary {
+    @include xw_button_types($primary-color, $primary-plain-color)
+}
+.xw-button-success {
+    @include xw_button_types($success-color, $success-plain-color)
+}
+.xw-button-info {
+    @include xw_button_types($info-color, $info-plain-color)
+}
+.xw-button-warning {
+    @include xw_button_types($warning-color, $warning-plain-color)
+}
+.xw-button-error {
+    @include xw_button_types($error-color, $error-plain-color)
+}
+@include xw_button_size(9px, 15px, 10px, 20px, 12px, 20px, 7px, 15px);
+// xw-button-group
+.xw-button-group {
+    overflow: hidden;
+    .xw-button {
+        border-radius: 0;
+        float: left;
+        border-right-width: 0.5px;
+        border-left-width: 0.5px;
+        &:first-child {
+            border-left-width: 1px;
+            border-top-left-radius: $border-radius;
+            border-bottom-left-radius: $border-radius;
+        }
+        &:last-child {
+            border-right-width: 1px;
+            border-top-right-radius: $border-radius;
+            border-bottom-right-radius: $border-radius;
+        }
+    }
+    .is-not-type-and-plain {
+        border-right-color: $border-main-color;
+        border-left-color: $border-main-color;
+        @include xw_button_group(primary, $primary-color);
+        @include xw_button_group(success, $success-color);
+        @include xw_button_group(info, $info-color);
+        @include xw_button_group(warning, $warning-color);
+        @include xw_button_group(error, $error-color);
+    }
+    .is-gradients {
+        border-right:1px solid $border-main-color;
+    }
+    .is-gradients::last-child {
+        border-right: none;
+    }
+}

@@ -1,0 +1,31 @@
+@import './common/var.scss';
+
+.xw-autocomplete_box {
+    position: relative;
+    display: inline-block;
+    vertical-align: middle;
+    .xw-autocomplete_list_box {
+        position: relative;
+        min-width: 100%;
+        transition: all .1s;
+        opacity: 1;
+        z-index: 99;
+        font-size: 14px;
+        .xw-autocomplete_list {
+            position: absolute;
+            min-width: 100%;
+            background: #fff;
+            padding: 0;
+            margin: 0;
+            top: 5px;
+            border-radius: $border-radius;
+            box-shadow: 0 1px 6px $default-shadowcolor;
+            line-height: 34px;
+            .xw-autocomplete_list_item {
+                cursor: pointer;
+                padding: 5px 10px;
+                white-space: nowrap;
+            }
+        }
+    }
+}

@@ -1,0 +1,118 @@
+[class*="xw-col-"] {
+    float: left;
+    box-sizing: border-box;
+}
+
+.xw-col-0 {
+    display: none;
+}
+@for $i from 0 through 24 {
+    .xw-col-#{$i} {
+        width: (1 / 24 * $i * 100)*1%;
+    }
+    .xw-col-offset-#{$i} {
+        margin-left: (1 / 24 * $i * 100)*1%;
+    }
+    .xw-col-pull-#{$i} {
+        position: relative;
+        right: (1 / 24 * $i * 100)*1%;
+    }
+    .xw-col-push-#{$i} {
+        position: relative;
+        left: (1 / 24 * $i * 100)*1%;
+    }
+}
+
+@media screen and (max-width: 768px) {
+    @for $i from 0 through 24 {
+        .xw-col-xs-#{$i} {
+            width: (1 / 24 * $i * 100)*1%;
+        }
+        .xw-col-xs-offset-#{$i} {
+            margin-left: (1 / 24 * $i * 100)*1%;
+        }
+        .xw-col-xs-pull-#{$i} {
+            position: relative;
+            right: (1 / 24 * $i * 100)*1%;
+        }
+        .xw-col-xs-push-#{$i} {
+            position: relative;
+            left: (1 / 24 * $i * 100)*1%;
+        }
+    }
+}
+
+@media screen and (min-width: 768px) and (max-width: 992px) {
+    @for $i from 0 through 24 {
+        .xw-col-sm-#{$i} {
+            width: (1 / 24 * $i * 100)*1%;
+        }
+        .xw-col-sm-offset-#{$i} {
+            margin-left: (1 / 24 * $i * 100)*1%;
+        }
+        .xw-col-sm-pull-#{$i} {
+            position: relative;
+            right: (1 / 24 * $i * 100)*1%;
+        }
+        .xw-col-sm-push-#{$i} {
+            position: relative;
+            left: (1 / 24 * $i * 100)*1%;
+        }
+    }
+}
+
+@media screen and (min-width: 992px) and (max-width: 1200px) {
+    @for $i from 0 through 24 {
+        .xw-col-md-#{$i} {
+            width: (1 / 24 * $i * 100)*1%;
+        }
+        .xw-col-md-offset-#{$i} {
+            margin-left: (1 / 24 * $i * 100)*1%;
+        }
+        .xw-col-md-pull-#{$i} {
+            position: relative;
+            right: (1 / 24 * $i * 100)*1%;
+        }
+        .xw-col-md-push-#{$i} {
+            position: relative;
+            left: (1 / 24 * $i * 100)*1%;
+        }
+    }
+}
+
+@media screen and (min-width: 1200px) and (max-width: 1920px) {
+    @for $i from 0 through 24 {
+        .xw-col-lg-#{$i} {
+            width: (1 / 24 * $i * 100)*1%;
+        }
+        .xw-col-lg-offset-#{$i} {
+            margin-left: (1 / 24 * $i * 100)*1%;
+        }
+        .xw-col-lg-pull-#{$i} {
+            position: relative;
+            right: (1 / 24 * $i * 100)*1%;
+        }
+        .xw-col-lg-push-#{$i} {
+            position: relative;
+            left: (1 / 24 * $i * 100)*1%;
+        }
+    }
+}
+@media screen and (min-width: 1920px) {
+    @for $i from 0 through 24 {
+        .xw-col-xl-#{$i} {
+            width: (1 / 24 * $i * 100)*1%;
+        }
+        .xw-col-xl-offset-#{$i} {
+            margin-left: (1 / 24 * $i * 100)*1%;
+        }
+        .xw-col-xl-pull-#{$i} {
+            position: relative;
+            right: (1 / 24 * $i * 100)*1%;
+        }
+        .xw-col-xl-push-#{$i} {
+            position: relative;
+            left: (1 / 24 * $i * 100)*1%;
+        }
+    }
+}

@@ -1,0 +1,13 @@
+@keyframes hue {
+    from {
+        -webkit-filter: hue-rotate(0deg);
+    }
+    to {
+        -webkit-filter: hue-rotate(-360deg);
+    }
+}
+
+.xw-in-out-fade-enter, .xw-in-out-fade-leave-active {
+    opacity: 0;
+    transform: scaleY(0);
+}

@@ -1,0 +1,54 @@
+.xw-form-inline {
+    display: flex;
+    flex-wrap: wrap;
+    .xw-form-item {
+        margin-right: 10px;
+        .xw-input_box {
+            width: 200px;
+        }
+    }
+}
+.xw-form-item {
+    display: flex;
+    line-height: 32px;
+    margin-bottom: 24px;
+    &.xw-form-item_label_top {
+        flex-direction: column;
+        align-items: flex-start;
+        .xw-form-item_label {
+            margin-bottom: 10px;
+        }
+        .xw-form-item_content {
+            width: 100%;
+        }
+    }
+    &.xw-for-item_is_error {
+        .xw-input_box .xw-input_box_inner .xw-input_wrapper .xw-input,
+        .xw-select_box .xw-select
+        {
+            border-color: #f00;
+        }
+    }
+    .xw-form-item_label {
+        margin-right: 10px;
+        .xw-form-item_require {
+            color: $error-color;
+        }
+    }
+    .xw-form-item_content {
+        flex: 1;
+        position: relative;
+        .xw-form-item_info {
+            transition: all .1s;
+            .xw-form-item_warning {
+                position: absolute;
+                top: 100%;
+                left: 0;
+                font-size: 12px;
+                height: 24px;
+                line-height: 24px;
+                color: $error-color;
+            }
+        }
+    }
+}

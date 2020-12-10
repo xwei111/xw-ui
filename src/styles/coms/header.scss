@@ -1,0 +1,15 @@
+.header-box {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 30px 50px;
+    background: #fff;
+    .header-logo {
+        cursor: pointer;
+        width: 45px;
+    }
+    .header-coms {
+        color: $primary-color;
+        cursor: pointer;
+    }
+}
